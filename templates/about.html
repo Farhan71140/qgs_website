@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% block title %}About Us — Qanat Global Solutions{% endblock %}
+{% block description %}Qanat Global Solutions — building India's integrated Talent & AI support ecosystem. Technology Powered. Human Driven.{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="label">Our Story</div>
+    <h1>Technology Powered.<br><span style="color:var(--blue);">Human Driven.</span></h1>
+    <p>We believe human intelligence makes technology meaningful. Qanat Global Solutions was built to bridge that gap — combining data, people, and purpose to help businesses grow confidently in the digital world.</p>
+  </div>
+</section>
+
+<!-- ── ABOUT CORE ── -->
+<section class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-orbit">
+          <div class="orbit-dot"></div>
+        </div>
+        <div class="about-circle">
+          <div class="about-circle-inner">
+            <div class="big">QGS</div>
+            <div class="small">Since 2020</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text fade-up">
+        <div class="label">Who We Are</div>
+        <h2>India's Integrated Talent &amp; AI Support Ecosystem</h2>
+        <p>Qanat Global Solutions (QGS) is a multi-vertical organization headquartered in India, specializing in AI data services, B2B demand generation, lead generation, data extraction, digital marketing, and voice projects.</p>
+        <p>We are building India's most integrated Talent & AI support ecosystem — one that combines trained human workforces with data infrastructure, channel intelligence, and digital growth capabilities to serve clients globally.</p>
+        <p>Our philosophy is simple: technology is powerful, but human intelligence makes it meaningful. Every dataset we produce, every lead we deliver, and every campaign we run is touched by real people committed to quality.</p>
+        <div class="values-list">
+          <div class="value-item">
+            <div class="value-dot"></div>
+            <p><strong>Empowering Talent</strong> — We build careers and capabilities in our workforce, not just outputs.</p>
+          </div>
+          <div class="value-item">
+            <div class="value-dot"></div>
+            <p><strong>Enabling Growth</strong> — We measure our success by our clients' pipeline, not our own metrics.</p>
+          </div>
+          <div class="value-item">
+            <div class="value-dot"></div>
+            <p><strong>Delivering Intelligence</strong> — We combine human expertise with smart processes to deliver insight, not just data.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS ── -->
+<section class="section-sm" style="background:var(--navy-mid);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="metrics-row">
+      <div class="metric-card fade-up">
+        <div class="metric-num" data-target="214" data-suffix="M+">214M+</div>
+        <div class="metric-label">Verified B2B Professionals</div>
+      </div>
+      <div class="metric-card fade-up">
+        <div class="metric-num" data-target="150" data-suffix="">150</div>
+        <div class="metric-label">Countries of Operation</div>
+      </div>
+      <div class="metric-card fade-up">
+        <div class="metric-num" data-target="5000" data-suffix="+">5000+</div>
+        <div class="metric-label">Trained Workforce</div>
+      </div>
+      <div class="metric-card fade-up">
+        <div class="metric-num" data-target="6" data-suffix="">6</div>
+        <div class="metric-label">Core Service Verticals</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ENGAGEMENT MODELS ── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="label">How We Engage</div>
+      <h2>Flexible Models That<br>Fit How You Work</h2>
+      <p>We adapt to your workflow — not the other way around. Choose the engagement model that fits your goals.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;">
+      {% for icon, model, tagline, desc in [
+        ('🚀', 'Pilot Programs', 'Low commitment, high insight', 'Test our capabilities with a low-risk pilot. Perfect for agencies evaluating new partners or entering new markets.'),
+        ('📅', 'Quarterly Allocations', 'Consistent, predictable flow', 'Structured quarterly engagements with predictable lead volumes and consistent pipeline contribution for ongoing campaigns.'),
+        ('🎯', 'Campaign-Based', 'Focused, goal-oriented', 'Project-based execution for specific campaigns, product launches, or event support with defined timelines and objectives.'),
+        ('♾️', 'Always-On Support', 'Strategic partnership', 'Continuous partnership with dedicated account management, real-time optimisation, and strategic guidance for maximum impact.'),
+      ] %}
+      <div class="card fade-up">
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px;">
+          <div class="card-icon" style="margin:0;">{{ icon }}</div>
+          <div>
+            <h3 style="margin-bottom:2px;">{{ model }}</h3>
+            <span style="font-size:0.78rem;color:var(--blue);font-weight:600;">{{ tagline }}</span>
+          </div>
+        </div>
+        <p>{{ desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ── COMPLIANCE ── -->
+<section class="section why-section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="label">Trust &amp; Compliance</div>
+      <h2>Built for Enterprise<br>and Procurement</h2>
+      <p>Every engagement is built on a foundation of compliance, transparency, and ethical data practices.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      {% for icon, title, desc in [
+        ('🔒', 'GDPR Compliant', 'Full compliance with EU General Data Protection Regulation for all European data processing.'),
+        ('🔒', 'CCPA Compliant', 'Adherence to California Consumer Privacy Act requirements for US-based contacts.'),
+        ('✉️', 'CASL Compliant', "Full compliance with Canada's Anti-Spam Legislation for email marketing."),
+        ('👤', 'First-Party Opt-In', 'All contacts have explicitly opted in to receive communications from our network.'),
+        ('🖊️', 'Digital Consent', 'Consent captured digitally with timestamp and IP verification for audit trails.'),
+        ('📋', 'Source Disclosure', 'Full transparency on data sources included with every lead delivery.'),
+      ] %}
+      <div class="card fade-up">
+        <div class="card-icon">{{ icon }}</div>
+        <h3>{{ title }}</h3>
+        <p>{{ desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ── PHILOSOPHY ── -->
+<section class="section">
+  <div class="container">
+    <div class="fade-up" style="max-width:760px;margin:0 auto;text-align:center;">
+      <div class="label">Our Philosophy</div>
+      <h2 style="margin-bottom:28px;">"Human Intelligence<br>Powering Artificial Intelligence"</h2>
+      <p style="font-size:1.1rem;line-height:1.8;margin-bottom:36px;">Technology is powerful. But human intelligence makes it meaningful. At Qanat Global Solutions, we combine both to help businesses grow confidently in the digital world. We are not just a data provider — we are your growth partner.</p>
+      <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+        <a href="/contact" class="btn btn-primary">Start a Conversation →</a>
+        <a href="/services" class="btn btn-outline">Explore Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

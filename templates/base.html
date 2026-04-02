@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Qanat Global Solutions — Technology Powered. Human Driven.{% endblock %}</title>
+  <meta name="description" content="{% block description %}Qanat Global Solutions — Human-powered AI data infrastructure: lead generation, data extraction, transcription, digital marketing and voice projects.{% endblock %}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css" />
+  {% block head %}{% endblock %}
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<header class="site-nav" id="siteNav">
+  <div class="nav-inner container">
+    <div class="nav-logo-wrap">
+      <a href="/" class="nav-logo" style="background:none;padding:0;border:none;"><img src="/static/logo.png" alt="Qanat Global Solutions" class="nav-logo-img" /></a>
+      <a href="/static/logo.png" target="_blank" class="logo-view-btn" title="View full logo">&#x26F6;</a>
+    </div>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="/services">Services</a>
+      <a href="/industries">Industries</a>
+      <a href="/about">About</a>
+      <a href="/contact" class="nav-cta">Get in Touch</a>
+    </nav>
+    <button class="nav-burger" id="navBurger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="/">Home</a>
+    <a href="/services">Services</a>
+    <a href="/industries">Industries</a>
+    <a href="/about">About</a>
+    <a href="/contact">Get in Touch →</a>
+  </div>
+</header>
+
+<!-- ── PAGE CONTENT ── -->
+<main>
+  {% block content %}{% endblock %}
+</main>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="/static/logo.png" alt="Qanat Global Solutions" style="height:48px;width:auto;margin-bottom:16px;" />
+      <p>Technology Powered.<br>Human Driven.</p>
+      <div class="footer-socials">
+        <a href="https://linkedin.com" target="_blank" rel="noopener">in</a>
+        <a href="https://twitter.com" target="_blank" rel="noopener">𝕏</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="/services#ai-data">AI Data Services</a>
+      <a href="/services#lead-gen">Lead Generation</a>
+      <a href="/services#transcription">Transcription</a>
+      <a href="/services#digital">Digital Marketing</a>
+      <a href="/services#voice">Voice Projects</a>
+      <a href="/services#extraction">Data Extraction</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="/about">About Us</a>
+      <a href="/industries">Industries</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p><a href="mailto:contactus@qanatcs.in">contactus@qanatcs.in</a></p>
+      <p><a href="tel:+919281415851">+91 92814 15851</a></p>
+      <p><a href="tel:+919908460566">+91 99084 60566</a></p>
+      <p><a href="https://qanatcs.in" target="_blank">qanatcs.in</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <p>© 2026 Qanat Global Solutions. All rights reserved.</p>
+    <p>Empowering Talent. Enabling Growth. Delivering Intelligence.</p>
+  </div>
+</footer>
+
+<script src="/static/main.js"></script>
+</body>
+</html>
