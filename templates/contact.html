@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% block title %}Contact — Qanat Global Solutions{% endblock %}
+{% block description %}Get in touch with Qanat Global Solutions. Email, call, or fill out our form and we'll respond within 24 hours.{% endblock %}
+
+{% block content %}
+
+<section class="page-hero" style="padding-bottom:48px;">
+  <div class="page-hero-bg"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="label">Get In Touch</div>
+    <h1>Let's Build Something<br><span style="color:var(--blue);">Strong Together</span></h1>
+    <p>Tell us your challenge. We'll design a solution. Response guaranteed within 24 hours.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- LEFT: Info -->
+      <div class="contact-info fade-up">
+        <h2>Reach Out<br>Directly</h2>
+        <p>Whether you need AI training data, B2B leads, transcription services, or a full-scale digital campaign — we're ready to talk.</p>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">✉️</div>
+          <div>
+            <small>Email</small>
+            <a href="mailto:contactus@qanatcs.in">contactus@qanatcs.in</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📞</div>
+          <div>
+            <small>Phone / WhatsApp</small>
+            <a href="tel:+919281415851">+91 92814 15851</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📞</div>
+          <div>
+            <small>Alternate</small>
+            <a href="tel:+919908460566">+91 99084 60566</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">🌐</div>
+          <div>
+            <small>Website</small>
+            <a href="https://qanatcs.in" target="_blank">qanatcs.in</a>
+          </div>
+        </div>
+
+        <br>
+        <a href="https://wa.me/919281415851" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;margin-bottom:12px;">
+          💬 Chat on WhatsApp
+        </a>
+        <a href="mailto:contactus@qanatcs.in" class="btn btn-outline" style="width:100%;justify-content:center;">
+          ✉️ Send an Email
+        </a>
+
+        <br><br>
+        <div class="card" style="padding:28px;">
+          <h4 style="margin-bottom:16px;color:var(--cyan);">What Happens Next</h4>
+          {% for step, label in [('1', 'We review your enquiry within 24h'), ('2', 'A specialist reaches out to understand your needs'), ('3', 'We propose a tailored solution and timeline'), ('4', 'Pilot or full engagement begins')] %}
+          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;">
+            <div style="width:24px;height:24px;border-radius:50%;background:var(--blue-glow);border:1px solid rgba(21,96,255,0.3);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:700;font-size:0.7rem;color:var(--blue);flex-shrink:0;">{{ step }}</div>
+            <p style="font-size:0.88rem;margin:0;padding-top:2px;">{{ label }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div class="fade-up">
+        <div class="form-card">
+          <h3 style="margin-bottom:8px;color:var(--white);">Send Us a Message</h3>
+          <p style="font-size:0.88rem;margin-bottom:32px;">Fill in your details and we'll be in touch within 24 hours.</p>
+
+          <form id="contactForm" method="post" action="/api/contact">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" placeholder="John Smith" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Work Email *</label>
+                <input type="email" id="email" name="email" placeholder="john@company.com" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" placeholder="Company Name" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 9000000000" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="service">Service of Interest</label>
+              <select id="service" name="service">
+                <option value="">— Select a Service —</option>
+                <option>AI Data Services &amp; Annotation</option>
+                <option>B2B Lead Generation</option>
+                <option>Data Extraction</option>
+                <option>Transcription Services</option>
+                <option>Digital Marketing</option>
+                <option>Voice Projects</option>
+                <option>Custom / Multiple Services</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="budget">Approximate Budget</label>
+              <select id="budget" name="budget">
+                <option value="">— Select Range —</option>
+                <option>Under $5,000</option>
+                <option>$5,000 – $20,000</option>
+                <option>$20,000 – $50,000</option>
+                <option>$50,000+</option>
+                <option>Enterprise / Custom</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell Us About Your Project *</label>
+              <textarea id="message" name="message" placeholder="Describe your use case, scale, timelines, and any specific requirements..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;border-radius:10px;padding:16px;">
+              Send Message →
+            </button>
+            <div class="form-success" id="formSuccess"></div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}
