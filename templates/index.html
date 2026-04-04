@@ -1,23 +1,34 @@
 {% extends "base.html" %}
 {% block title %}Qanat Global Solutions — Technology Powered. Human Driven.{% endblock %}
-
 {% block content %}
 
-<!-- ══ HERO ══ -->
+<!-- ══ HERO WITH VIDEO BACKGROUND ══ -->
 <section class="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg-mesh"></div>
   <div class="hero-grid"></div>
+
+  <!-- Hero Video Background -->
+  <div class="hero-video-wrap">
+    <iframe
+      src="https://www.youtube.com/embed/reUZRyXxUs4?autoplay=1&mute=1&loop=1&playlist=reUZRyXxUs4&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+      frameborder="0"
+      allow="autoplay; muted"
+      class="hero-video-iframe">
+    </iframe>
+    <div class="hero-video-overlay"></div>
+  </div>
+
   <div class="container hero-inner">
-    <div class="label">Human Intelligence Meets Digital Growth</div>
+    <div class="label-pill">Human Intelligence Meets Digital Growth</div>
     <h1>
-      Powering <span class="accent">AI & Business</span><br>
-      With Human Data
+      Powering <span class="gold">AI &amp; Business</span><br>
+      With <span class="teal">Human Data</span>
     </h1>
     <p class="hero-sub">
-      We are a demand activation and AI data infrastructure company — delivering verified leads, scalable datasets, transcription, and digital growth services. Fast. Affordable. Human-driven.
+      Demand activation and AI data infrastructure — verified leads, scalable datasets, transcription &amp; digital growth services. Fast. Affordable. Human-driven.
     </p>
     <div class="hero-actions">
-      <a href="/contact" class="btn btn-primary">Get a Free Proposal →</a>
+      <a href="/contact" class="btn btn-gold">Get a Free Proposal →</a>
       <a href="/services" class="btn btn-outline">Explore Services</a>
     </div>
     <div class="hero-stats">
@@ -25,17 +36,20 @@
         <div class="stat-num"><span data-target="214" data-suffix="M+">214M+</span></div>
         <div class="stat-label">Verified B2B Contacts</div>
       </div>
+      <div class="stat-divider"></div>
       <div class="stat-item">
         <div class="stat-num"><span data-target="150" data-suffix="+">150+</span></div>
         <div class="stat-label">Countries Covered</div>
       </div>
+      <div class="stat-divider"></div>
       <div class="stat-item">
         <div class="stat-num"><span data-target="40" data-suffix="%">40%</span></div>
         <div class="stat-label">Avg CPL Reduction</div>
       </div>
+      <div class="stat-divider"></div>
       <div class="stat-item">
-        <div class="stat-num"><span data-target="25" data-suffix="%+">25%+</span></div>
-        <div class="stat-label">Conversion Lift</div>
+        <div class="stat-num"><span data-target="100" data-suffix="%">100%</span></div>
+        <div class="stat-label">Human QA Verified</div>
       </div>
     </div>
   </div>
@@ -44,67 +58,221 @@
 <!-- ══ TICKER ══ -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    {% for item in ['AI Data Services', 'Lead Generation', 'Data Extraction', 'Transcription', 'Voice Projects', 'Digital Marketing', 'Channel Intelligence', 'Human QA Verified', 'GDPR Compliant', 'B2B Demand Activation', 'AI Data Services', 'Lead Generation', 'Data Extraction', 'Transcription', 'Voice Projects', 'Digital Marketing', 'Channel Intelligence', 'Human QA Verified', 'GDPR Compliant', 'B2B Demand Activation'] %}
+    {% for item in ['AI Data Services','Lead Generation','Data Extraction','Transcription','Voice Projects','Digital Marketing','Channel Intelligence','Human QA Verified','GDPR Compliant','B2B Demand Activation','AI Data Services','Lead Generation','Data Extraction','Transcription','Voice Projects','Digital Marketing','Channel Intelligence','Human QA Verified','GDPR Compliant','B2B Demand Activation'] %}
     <div class="ticker-item"><div class="dot"></div>{{ item }}</div>
     {% endfor %}
   </div>
 </div>
 
-<!-- ══ SERVICES OVERVIEW ══ -->
-<section class="section">
+<!-- ══ VISUAL INTRO — AI & AUTOMATION ══ -->
+<section class="section" style="padding-bottom:40px;">
   <div class="container">
-    <div class="section-header fade-up">
-      <div class="label">What We Do</div>
-      <h2>End-to-End Data &amp;<br>Growth Services</h2>
-      <p>From AI training data to B2B lead activation — we combine human intelligence with smart execution to deliver results that matter.</p>
-    </div>
-    <div class="services-grid">
-      <div class="card service-card featured fade-up">
-        <div class="card-icon">🎯</div>
-        <h3>B2B Lead Generation &amp; Demand Activation</h3>
-        <p>We don't just deliver leads — we activate demand. Our human-verified, opt-in B2B contacts come enriched with channel intelligence, phone readiness signals, and intent data — so your sales team reaches the right buyer at the right time via the right channel.</p>
-        <br>
-        <div class="compliance-row">
-          <span class="badge">GDPR ✓</span>
-          <span class="badge">CCPA ✓</span>
-          <span class="badge">CASL ✓</span>
-          <span class="badge">100% Opt-In</span>
+    <div class="visual-intro-grid fade-up">
+
+      <!-- Left: Text -->
+      <div class="vi-text">
+        <div class="label-pill">Who We Are</div>
+        <h2>India's Leading <span class="accent">Human-Powered</span><br>AI Data Company</h2>
+        <div class="gold-line"></div>
+        <p>At Qanat Global Solutions, we bridge the gap between human intelligence and machine learning — providing the world's most accurate, ethically sourced, and scalable AI training data and B2B demand generation services.</p>
+        <p style="margin-top:16px;">We power autonomous systems, robotics, NLP engines, computer vision models, and B2B pipelines — all backed by a trained 5,000+ human workforce operating across 150+ countries.</p>
+        <div style="display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;">
+          <a href="/about" class="btn btn-gold">Our Story →</a>
+          <a href="/services" class="btn btn-outline">Our Services</a>
         </div>
       </div>
-      <div class="card service-card fade-up">
-        <div class="card-icon">🤖</div>
-        <h3>AI Data Services</h3>
-        <p>High-quality human-generated datasets for training AI and robotics systems. Egocentric video, image annotation, speech data and more.</p>
+
+      <!-- Right: Image collage -->
+      <div class="vi-images">
+        <div class="vi-img-main">
+          <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=700&q=80"
+               alt="AI Robot Automation" loading="lazy" />
+          <div class="vi-img-badge">🤖 AI & Robotics</div>
+        </div>
+        <div class="vi-img-row">
+          <div class="vi-img-sm">
+            <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=400&q=80"
+                 alt="AI Data Processing" loading="lazy" />
+            <span>AI Data</span>
+          </div>
+          <div class="vi-img-sm">
+            <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=400&q=80"
+                 alt="Data Annotation" loading="lazy" />
+            <span>Annotation</span>
+          </div>
+        </div>
       </div>
-      <div class="card service-card fade-up">
-        <div class="card-icon">📝</div>
-        <h3>Transcription &amp; NLP Data</h3>
-        <p>Multilingual audio transcription, speech-to-text datasets, and AI chatbot training data — delivered with human accuracy.</p>
-      </div>
-      <div class="card service-card fade-up">
-        <div class="card-icon">🔍</div>
-        <h3>Data Extraction</h3>
-        <p>Structured data extraction at scale from web, documents, and proprietary sources — cleaned and formatted for immediate use.</p>
-      </div>
-      <div class="card service-card fade-up">
-        <div class="card-icon">📣</div>
-        <h3>Digital Marketing</h3>
-        <p>Performance-led digital campaigns — email, content syndication, tele outreach — designed to build pipeline, not just impressions.</p>
-      </div>
-      <div class="card service-card fade-up">
-        <div class="card-icon">🎙️</div>
-        <h3>Voice Projects</h3>
-        <p>Custom voice data collection, multilingual voice datasets, and spoken language projects for AI voice model training.</p>
-      </div>
+
     </div>
-    <div style="text-align:center;margin-top:48px;" class="fade-up">
-      <a href="/services" class="btn btn-outline">View All Services →</a>
+  </div>
+</section>
+
+<!-- ══ SERVICES WITH IMAGES ══ -->
+<section class="section" style="padding-top:60px;">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="label-pill">What We Do</div>
+      <h2>End-to-End Data &amp;<br><span class="accent">Growth Services</span></h2>
+      <div class="gold-line"></div>
+      <p>From AI training data to B2B lead activation — human intelligence combined with smart execution to deliver results that matter.</p>
+    </div>
+
+    <!-- SERVICE SHOWCASE CARDS WITH IMAGES -->
+    <div class="service-showcase fade-up">
+
+      <div class="svc-img-card">
+        <div class="svc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80" alt="AI Data Services" loading="lazy" />
+          <div class="svc-img-overlay">
+            <span class="svc-tag">🤖 AI Data Services</span>
+          </div>
+        </div>
+        <div class="svc-img-body">
+          <h3>AI Data &amp; Annotation</h3>
+          <p>Egocentric video, image annotation, object detection, motion tracking — high-quality human-generated datasets for training AI, ML and robotics systems at scale.</p>
+          <a href="/services#ai-data" class="svc-link">Learn More →</a>
+        </div>
+      </div>
+
+      <div class="svc-img-card">
+        <div class="svc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Lead Generation" loading="lazy" />
+          <div class="svc-img-overlay">
+            <span class="svc-tag">🎯 Lead Generation</span>
+          </div>
+        </div>
+        <div class="svc-img-body">
+          <h3>B2B Lead Generation</h3>
+          <p>214M+ first-party verified contacts across 150 countries. Channel intelligence, phone readiness signals and human QA — built to convert, not just fill pipelines.</p>
+          <a href="/services#lead-gen" class="svc-link">Learn More →</a>
+        </div>
+      </div>
+
+      <div class="svc-img-card">
+        <div class="svc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1589254065878-42c9da997008?w=600&q=80" alt="Transcription Services" loading="lazy" />
+          <div class="svc-img-overlay">
+            <span class="svc-tag">📝 Transcription</span>
+          </div>
+        </div>
+        <div class="svc-img-body">
+          <h3>Transcription &amp; NLP Data</h3>
+          <p>Multilingual audio transcription across 30+ languages, speech-to-text datasets and chatbot training data — human-powered accuracy at machine scale.</p>
+          <a href="/services#transcription" class="svc-link">Learn More →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Second row -->
+    <div class="service-showcase service-showcase-2 fade-up" style="margin-top:28px;">
+
+      <div class="svc-img-card">
+        <div class="svc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80" alt="Data Extraction" loading="lazy" />
+          <div class="svc-img-overlay">
+            <span class="svc-tag">🔍 Data Extraction</span>
+          </div>
+        </div>
+        <div class="svc-img-body">
+          <h3>Data Extraction</h3>
+          <p>Web scraping, document digitisation and structured data extraction at scale — cleaned, formatted and ready to use immediately.</p>
+          <a href="/services#extraction" class="svc-link">Learn More →</a>
+        </div>
+      </div>
+
+      <div class="svc-img-card">
+        <div class="svc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="Digital Marketing" loading="lazy" />
+          <div class="svc-img-overlay">
+            <span class="svc-tag">📣 Digital Marketing</span>
+          </div>
+        </div>
+        <div class="svc-img-body">
+          <h3>Digital Marketing</h3>
+          <p>Performance-led campaigns — email, content syndication, multi-touch tele outreach. Built for pipeline impact, not vanity metrics.</p>
+          <a href="/services#digital" class="svc-link">Learn More →</a>
+        </div>
+      </div>
+
+      <div class="svc-img-card">
+        <div class="svc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=600&q=80" alt="Voice Projects" loading="lazy" />
+          <div class="svc-img-overlay">
+            <span class="svc-tag">🎙️ Voice Projects</span>
+          </div>
+        </div>
+        <div class="svc-img-body">
+          <h3>Voice Projects</h3>
+          <p>Custom voice data collection, multilingual speech datasets and audio QA — built to train the next generation of AI voice models.</p>
+          <a href="/services#voice" class="svc-link">Learn More →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ VIDEO SECTION — AUTOMATION & ROBOTICS ══ -->
+<section class="section video-section">
+  <div class="container">
+    <div class="section-header fade-up" style="text-align:center;">
+      <div class="label-pill">AI in Action</div>
+      <h2>Automation &amp; <span class="accent">Robotics</span> We Power</h2>
+      <div class="gold-line" style="margin:20px auto;"></div>
+      <p style="margin:0 auto;max-width:580px;">Our datasets power autonomous systems, robotic arms, computer vision and AI agents across the globe.</p>
+    </div>
+
+    <div class="video-grid fade-up">
+      <div class="video-card main-video">
+        <div class="video-thumb">
+          <img src="https://images.unsplash.com/photo-1655720931174-4deb7745e1c0?w=800&q=80" alt="Robotics AI" loading="lazy" />
+          <a href="https://www.youtube.com/watch?v=fn3KWM1kuAw" target="_blank" class="play-btn">
+            <span>▶</span>
+          </a>
+          <div class="video-label">🤖 Industrial Robotics &amp; AI</div>
+        </div>
+        <div class="video-caption">
+          <h3>How Our Data Powers Robotics</h3>
+          <p>Egocentric datasets, motion capture and sensor fusion data that trains real-world robotic systems.</p>
+        </div>
+      </div>
+
+      <div class="video-side">
+        <div class="video-card sm-video">
+          <div class="video-thumb">
+            <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=500&q=80" alt="AI Processing" loading="lazy" />
+            <a href="https://www.youtube.com/watch?v=aircAruvnKk" target="_blank" class="play-btn sm">
+              <span>▶</span>
+            </a>
+            <div class="video-label">🧠 Computer Vision</div>
+          </div>
+          <div class="video-caption">
+            <h3>Computer Vision Datasets</h3>
+            <p>Object detection, segmentation and image labeling at scale.</p>
+          </div>
+        </div>
+
+        <div class="video-card sm-video">
+          <div class="video-thumb">
+            <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=500&q=80" alt="NLP AI" loading="lazy" />
+            <a href="https://www.youtube.com/watch?v=X-AWdfSFCHQ" target="_blank" class="play-btn sm">
+              <span>▶</span>
+            </a>
+            <div class="video-label">💬 NLP &amp; Voice AI</div>
+          </div>
+          <div class="video-caption">
+            <h3>Speech &amp; NLP Training Data</h3>
+            <p>Multilingual voice datasets for AI assistants and chatbots.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ══ METRICS ══ -->
-<section class="section-sm" style="background:var(--navy-mid);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+<div class="section-sm" style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
   <div class="container">
     <div class="metrics-row">
       <div class="metric-card fade-up">
@@ -112,7 +280,7 @@
         <div class="metric-label">First-Party Opt-In Professionals</div>
       </div>
       <div class="metric-card fade-up">
-        <div class="metric-num" data-target="150" data-suffix="">150</div>
+        <div class="metric-num" data-target="150">150</div>
         <div class="metric-label">Countries of Activation</div>
       </div>
       <div class="metric-card fade-up">
@@ -120,133 +288,40 @@
         <div class="metric-label">CTR Above Industry Benchmark</div>
       </div>
       <div class="metric-card fade-up">
-        <div class="metric-num" data-target="100" data-suffix="%">100%</div>
-        <div class="metric-label">Human QA Verified Leads</div>
+        <div class="metric-num" data-target="40" data-suffix="%">40%</div>
+        <div class="metric-label">Avg CPL Reduction</div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- ══ PROCESS ══ -->
-<section class="section">
-  <div class="container">
-    <div class="section-header fade-up" style="text-align:center;">
-      <div class="label">How It Works</div>
-      <h2>Our Demand Activation Flow</h2>
-      <p>A battle-tested 7-step process that continuously improves with every campaign.</p>
-    </div>
-    <div class="process-steps fade-up">
-      <div class="process-step">
-        <div class="step-num">1</div>
-        <div class="step-label">ICP &amp; Persona Alignment</div>
-      </div>
-      <div class="process-step">
-        <div class="step-num">2</div>
-        <div class="step-label">First-Party Activation</div>
-      </div>
-      <div class="process-step">
-        <div class="step-num">3</div>
-        <div class="step-label">Intent &amp; Channel Map</div>
-      </div>
-      <div class="process-step">
-        <div class="step-num">4</div>
-        <div class="step-label">Content Engagement</div>
-      </div>
-      <div class="process-step">
-        <div class="step-num">5</div>
-        <div class="step-label">Tele &amp; Digital Validation</div>
-      </div>
-      <div class="process-step">
-        <div class="step-num">6</div>
-        <div class="step-label">Lead QA</div>
-      </div>
-      <div class="process-step">
-        <div class="step-num" style="background:var(--blue);color:white;">7</div>
-        <div class="step-label">Results &amp; Pipeline</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ WHY QGS ══ -->
-<section class="section why-section">
-  <div class="container">
-    <div class="section-header fade-up">
-      <div class="label">Why Choose QGS</div>
-      <h2>Built for Results,<br>Not Vanity Metrics</h2>
-      <p>We focus on outcomes. No dashboards to manage, no platforms to learn — just qualified leads and quality data that convert.</p>
-    </div>
-    <div class="why-grid">
-      <div class="why-item fade-up">
-        <div class="why-check">✓</div>
-        <div>
-          <h3>Human QA on Every Lead</h3>
-          <p>Every lead and dataset is verified by real people — not automated bots — ensuring quality you can trust.</p>
-        </div>
-      </div>
-      <div class="why-item fade-up">
-        <div class="why-check">✓</div>
-        <div>
-          <h3>Channel Intelligence Included</h3>
-          <p>We tell you who to call, who to email, and who to nurture — cutting waste and boosting connect rates.</p>
-        </div>
-      </div>
-      <div class="why-item fade-up">
-        <div class="why-check">✓</div>
-        <div>
-          <h3>Affordable vs Global Competitors</h3>
-          <p>Enterprise-grade output at a fraction of the cost of Scale AI, Appen or global agencies.</p>
-        </div>
-      </div>
-      <div class="why-item fade-up">
-        <div class="why-check">✓</div>
-        <div>
-          <h3>Fast Turnaround</h3>
-          <p>Large workforce, streamlined processes — we deliver at speed without compromising accuracy.</p>
-        </div>
-      </div>
-      <div class="why-item fade-up">
-        <div class="why-check">✓</div>
-        <div>
-          <h3>Global Reach, Local Compliance</h3>
-          <p>GDPR, CCPA, CASL compliant. Active in 150+ countries with localized data collection and cultural adaptation.</p>
-        </div>
-      </div>
-      <div class="why-item fade-up">
-        <div class="why-check">✓</div>
-        <div>
-          <h3>Flexible Engagement Models</h3>
-          <p>Pilot programs, campaign-based, quarterly, or always-on — we adapt to how you work, not the other way around.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ INDUSTRIES PREVIEW ══ -->
+<!-- ══ INDUSTRIES WITH IMAGES ══ -->
 <section class="section">
   <div class="container">
     <div class="section-header fade-up">
-      <div class="label">Industries We Serve</div>
-      <h2>Deep Expertise Across<br>Key Sectors</h2>
+      <div class="label-pill">Industries We Serve</div>
+      <h2>Deep Expertise Across<br><span class="accent">Key Sectors</span></h2>
+      <div class="gold-line"></div>
     </div>
-    <div class="industries-grid">
-      {% for ind in [
-        ('🏭', 'Manufacturing', 'Production line AI, quality control data'),
-        ('🏥', 'Healthcare AI', 'Medical imaging, NLP datasets, clinical data'),
-        ('🏦', 'Financial &amp; Banking', 'Fraud detection, compliance data'),
-        ('🤖', 'Robotics &amp; Automation', 'Egocentric video, motion tracking'),
-        ('📡', 'Telecommunications', 'Network analytics, customer data'),
-        ('🎓', 'Education', 'EdTech datasets, learning analytics'),
-        ('🏛️', 'Government', 'Public sector data, compliance programs'),
-        ('🛒', 'Retail &amp; E-Commerce', 'Consumer behaviour, product data'),
-        ('💬', 'Conversational AI', 'Chat training data, multilingual NLP'),
+    <div class="industry-img-grid fade-up">
+      {% for img, icon, name, desc in [
+        ('https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=500&q=80','🤖','Robotics & Automation','Egocentric video, motion tracking datasets'),
+        ('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&q=80','🏥','Healthcare AI','Medical imaging, clinical NLP datasets'),
+        ('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&q=80','🏦','Financial & Banking','Fraud detection, KYC data'),
+        ('https://images.unsplash.com/photo-1565106430482-8f6e74349ca1?w=500&q=80','🏭','Manufacturing','Defect detection, production AI'),
+        ('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&q=80','🎓','Education','EdTech datasets, learning analytics'),
+        ('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=500&q=80','💬','Conversational AI','Dialogue, intent, NLP datasets'),
       ] %}
-      <div class="industry-card fade-up">
-        <div class="industry-icon">{{ ind[0] }}</div>
-        <div>
-          <h3>{{ ind[1] }}</h3>
-          <p>{{ ind[2] }}</p>
+      <div class="ind-img-card">
+        <div class="ind-img-wrap">
+          <img src="{{ img }}" alt="{{ name }}" loading="lazy" />
+          <div class="ind-img-overlay">
+            <span>{{ icon }}</span>
+          </div>
+        </div>
+        <div class="ind-img-body">
+          <h3>{{ name }}</h3>
+          <p>{{ desc }}</p>
         </div>
       </div>
       {% endfor %}
@@ -257,7 +332,53 @@
   </div>
 </section>
 
-<!-- ══ CTA BANNER ══ -->
+<!-- ══ WHY QGS ══ -->
+<section class="section why-section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="label-pill">Why Choose QGS</div>
+      <h2>Built for Results,<br>Not <span class="accent">Vanity Metrics</span></h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="why-grid">
+      {% for title, desc in [
+        ('Human QA on Every Lead','Every lead and dataset is verified by real people ensuring quality you can trust.'),
+        ('Channel Intelligence Included','We tell you who to call, who to email, and who to nurture — cutting waste.'),
+        ('Affordable vs Global Competitors','Enterprise-grade output at a fraction of the cost of Scale AI or Appen.'),
+        ('Fast Turnaround','Large workforce, streamlined processes — we deliver at speed without compromising accuracy.'),
+        ('Global Reach, Local Compliance','GDPR, CCPA, CASL compliant. Active in 150+ countries with local data collection.'),
+        ('Flexible Engagement Models','Pilot, campaign-based, quarterly, or always-on — we adapt to how you work.'),
+      ] %}
+      <div class="why-item fade-up">
+        <div class="why-check">✓</div>
+        <div><h3>{{ title }}</h3><p>{{ desc }}</p></div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCESS ══ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-up" style="text-align:center;">
+      <div class="label-pill">How It Works</div>
+      <h2>Our Demand <span class="accent">Activation Flow</span></h2>
+      <div class="gold-line" style="margin:20px auto;"></div>
+    </div>
+    <div class="process-steps fade-up">
+      <div class="process-step"><div class="step-num">1</div><div class="step-label">ICP &amp; Persona Alignment</div></div>
+      <div class="process-step"><div class="step-num">2</div><div class="step-label">First-Party Activation</div></div>
+      <div class="process-step"><div class="step-num">3</div><div class="step-label">Intent &amp; Channel Map</div></div>
+      <div class="process-step"><div class="step-num">4</div><div class="step-label">Content Engagement</div></div>
+      <div class="process-step"><div class="step-num">5</div><div class="step-label">Tele &amp; Digital Validation</div></div>
+      <div class="process-step"><div class="step-num">6</div><div class="step-label">Lead QA</div></div>
+      <div class="process-step"><div class="step-num final">7</div><div class="step-label">Results &amp; Pipeline</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
 <section class="section-sm">
   <div class="container fade-up">
     <div class="cta-banner">
@@ -266,8 +387,8 @@
         <p>Let's discuss how Qanat Global Solutions can strengthen your outcomes.</p>
       </div>
       <div class="cta-actions">
-        <a href="/contact" class="btn btn-white">Request a Proposal →</a>
-        <a href="tel:+919281415851" class="btn btn-ghost">📞 Call Us Now</a>
+        <a href="/contact" class="btn btn-gold">Request a Proposal →</a>
+        <a href="tel:+919281415851" class="btn btn-outline">📞 Call Us Now</a>
       </div>
     </div>
   </div>
