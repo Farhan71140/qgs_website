@@ -11,16 +11,21 @@ if (burger && mobileNav) {
   burger.addEventListener('click', () => {
     mobileNav.classList.toggle('open');
     const spans = burger.querySelectorAll('span');
-    spans[0].style.transform = mobileNav.classList.contains('open') ? 'rotate(45deg) translate(5px,5px)' : '';
-    spans[1].style.opacity   = mobileNav.classList.contains('open') ? '0' : '';
-    spans[2].style.transform = mobileNav.classList.contains('open') ? 'rotate(-45deg) translate(5px,-5px)' : '';
+    const isOpen = mobileNav.classList.contains('open');
+    spans[0].style.transform = isOpen ? 'rotate(45deg) translate(5px,5px)' : '';
+    spans[1].style.opacity   = isOpen ? '0' : '';
+    spans[2].style.transform = isOpen ? 'rotate(-45deg) translate(5px,-5px)' : '';
   });
 }
 
 // ── Intersection observer for fade-up
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
 // ── Animated counters
@@ -28,7 +33,7 @@ function animateCounter(el) {
   const target = parseFloat(el.dataset.target);
   const suffix = el.dataset.suffix || '';
   const prefix = el.dataset.prefix || '';
-  const duration = 1800;
+  const duration = 2000;
   const start = performance.now();
   const isDecimal = target % 1 !== 0;
   function step(now) {
@@ -50,16 +55,52 @@ const counterObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
 
+// ── Gold cursor glow trail
+(function() {
+  const dot = document.createElement('div');
+  dot.style.cssText = `
+    position:fixed;width:320px;height:320px;border-radius:50%;
+    background:radial-gradient(circle,rgba(201,168,76,0.08) 0%,transparent 65%);
+    pointer-events:none;z-index:9998;transform:translate(-50%,-50%);
+    transition:left 0.6s ease,top 0.6s ease;opacity:0;
+  `;
+  document.body.appendChild(dot);
+  let visible = false;
+  document.addEventListener('mousemove', (e) => {
+    dot.style.left = e.clientX + 'px';
+    dot.style.top  = e.clientY + 'px';
+    if (!visible) { dot.style.opacity = '1'; visible = true; }
+  });
+  document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; visible = false; });
+})();
+
+// ── Liquid glass card parallax tilt (subtle)
+document.querySelectorAll('.card, .metric-card, .svc-img-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const cx = (e.clientX - rect.left) / rect.width  - 0.5;
+    const cy = (e.clientY - rect.top)  / rect.height - 0.5;
+    card.style.transform = `translateY(-7px) rotateX(${-cy * 4}deg) rotateY(${cx * 4}deg)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+  });
+});
+
 // ── Contact form
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = contactForm.querySelector('button[type=submit]');
+    const originalText = btn.textContent;
     btn.textContent = 'Sending…';
     btn.disabled = true;
     try {
-      const res = await fetch('/api/contact', { method: 'POST', body: new FormData(contactForm) });
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        body: new FormData(contactForm)
+      });
       const data = await res.json();
       if (data.status === 'success') {
         contactForm.reset();
@@ -69,7 +110,7 @@ if (contactForm) {
     } catch (err) {
       console.error(err);
     } finally {
-      btn.textContent = 'Send Message →';
+      btn.textContent = originalText;
       btn.disabled = false;
     }
   });
@@ -79,6 +120,11 @@ if (contactForm) {
 const currentPath = window.location.pathname;
 document.querySelectorAll('.nav-links a, .nav-mobile a').forEach(link => {
   if (link.getAttribute('href') === currentPath) {
-    link.style.color = 'var(--white)';
+    link.style.color = 'var(--gold-light)';
   }
+});
+
+// ── Gold shimmer on scroll for ticker
+document.querySelectorAll('.ticker-item').forEach((item, i) => {
+  item.style.animationDelay = (i * 0.1) + 's';
 });
