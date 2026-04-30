@@ -391,18 +391,19 @@ p { color: var(--gray-500); line-height: 1.6; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 55% at 50% -10%, rgba(24,226,153,0.14) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 40% at 10% 70%, rgba(24,226,153,0.06) 0%, transparent 55%),
-    radial-gradient(ellipse 40% 50% at 90% 60%, rgba(15,167,110,0.04) 0%, transparent 60%);
+    radial-gradient(ellipse 75% 65% at 72% 42%, rgba(24,226,153,0.13) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 50% at 15% 70%, rgba(24,226,153,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 55% at 45% 10%, rgba(15,167,110,0.04) 0%, transparent 65%);
 }
 .hero-grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(0,0,0,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,0.025) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 30%, transparent 100%);
+    linear-gradient(rgba(24,226,153,0.22) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(24,226,153,0.22) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 62% 75% at 75% 48%, black 20%, rgba(0,0,0,0.4) 55%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 62% 75% at 75% 48%, black 20%, rgba(0,0,0,0.4) 55%, transparent 80%);
 }
 .hero-inner { position: relative; z-index: 2; max-width: 840px; }
 .hero h1 { margin-bottom: 24px; color: var(--near-black); }
