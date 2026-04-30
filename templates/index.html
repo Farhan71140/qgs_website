@@ -7,9 +7,6 @@
   <div class="hero-bg-mesh"></div>
   <div class="hero-grid"></div>
 
-  <!-- ── PARTICLE GLOBE CANVAS ── -->
-  <canvas id="globeCanvas" class="hero-globe-canvas" aria-hidden="true"></canvas>
-
   <!-- Hero Video Background — Pexels direct MP4 -->
   <div class="hero-video-wrap">
     <video
@@ -411,101 +408,5 @@
     </div>
   </div>
 </section>
-
-<script>
-// ── PARTICLE GLOBE ──────────────────────────────────────────
-(function() {
-  const canvas = document.getElementById('globeCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-
-  const RADIUS    = 220;
-  const NUM_DOTS  = 2800;
-  const DOT_SIZE  = 1.35;
-  const SPEED     = 0.0028;
-  const DOT_R     = 24, DOT_G = 226, DOT_B = 153; // #18E299
-
-  let W, H, cx, cy;
-  let angleY = 0;
-
-  // Fibonacci sphere — evenly distributed points
-  const points = [];
-  const golden = Math.PI * (3 - Math.sqrt(5));
-  for (let i = 0; i < NUM_DOTS; i++) {
-    const y = 1 - (i / (NUM_DOTS - 1)) * 2;
-    const r = Math.sqrt(1 - y * y);
-    const theta = golden * i;
-    points.push({ ox: Math.cos(theta) * r, oy: y, oz: Math.sin(theta) * r });
-  }
-
-  function resize() {
-    const dpr  = window.devicePixelRatio || 1;
-    const hero = canvas.parentElement;
-    W = hero.offsetWidth;
-    H = hero.offsetHeight;
-    canvas.width  = W * dpr;
-    canvas.height = H * dpr;
-    canvas.style.width  = W + 'px';
-    canvas.style.height = H + 'px';
-    ctx.scale(dpr, dpr);
-    cx = W * 0.72;
-    cy = H * 0.48;
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    const cosA = Math.cos(angleY), sinA = Math.sin(angleY);
-
-    const projected = points.map(p => {
-      const rx = p.ox * cosA - p.oz * sinA;
-      const ry = p.oy;
-      const rz = p.ox * sinA + p.oz * cosA;
-      const depth = (rz + 1.5) / 2.5;
-      return { sx: cx + rx * RADIUS, sy: cy + ry * RADIUS, depth, rz };
-    });
-
-    projected.sort((a, b) => a.rz - b.rz);
-
-    for (const pt of projected) {
-      const d     = pt.depth;
-      const alpha = 0.08 + d * 0.75;
-      const size  = DOT_SIZE * (0.35 + d * 0.85);
-      ctx.beginPath();
-      ctx.arc(pt.sx, pt.sy, size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${DOT_R},${DOT_G},${DOT_B},${alpha.toFixed(3)})`;
-      ctx.fill();
-    }
-
-    // Edge vignette
-    const vg = ctx.createRadialGradient(cx, cy, RADIUS * 0.55, cx, cy, RADIUS * 1.06);
-    vg.addColorStop(0,   'rgba(0,0,0,0)');
-    vg.addColorStop(0.68,'rgba(0,0,0,0)');
-    vg.addColorStop(1,   'rgba(10,14,20,0.78)');
-    ctx.fillStyle = vg;
-    ctx.beginPath();
-    ctx.arc(cx, cy, RADIUS * 1.1, 0, Math.PI * 2);
-    ctx.fill();
-
-    angleY += SPEED;
-  }
-
-  let animId;
-  function loop() { draw(); animId = requestAnimationFrame(loop); }
-
-  resize();
-  loop();
-
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      cancelAnimationFrame(animId);
-      ctx.setTransform(1,0,0,1,0,0);
-      resize();
-      loop();
-    }, 150);
-  });
-})();
-</script>
 
 {% endblock %}
