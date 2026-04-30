@@ -13,34 +13,92 @@
   </div>
 </section>
 
+<!-- ── INDUSTRIES HERO IMAGE ── -->
+<section style="padding:0;">
+  <div style="height:380px;overflow:hidden;position:relative;">
+    <img src="https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=1400&dpr=1"
+         alt="Industries We Serve"
+         style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+    <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(2,11,24,1) 0%,rgba(2,11,24,0.25) 60%,rgba(2,11,24,0.1) 100%);"></div>
+  </div>
+</section>
+
 <section class="section">
   <div class="container">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;" class="ind-grid">
       {% set industries = [
-        ('🤖', 'Robotics &amp; Autonomous Systems', 'Egocentric video, motion tracking, and multi-sensor datasets that power next-generation robotics. We help teams build the perception data pipelines needed for safe, reliable automation.', ['Egocentric video data', 'Motion capture datasets', 'Object detection annotation', 'Multi-sensor fusion data']),
-        ('🏥', 'Healthcare AI', 'Medical imaging annotation, clinical NLP datasets, and patient interaction data — delivered with the accuracy and sensitivity healthcare demands.', ['Medical image annotation', 'Clinical NLP datasets', 'Patient record digitisation', 'Diagnostic AI training data']),
-        ('🏦', 'Financial &amp; Banking', 'Fraud detection training data, KYC document processing, and compliance datasets — structured for financial institution requirements.', ['Fraud detection datasets', 'KYC document extraction', 'Transaction classification', 'Regulatory compliance data']),
-        ('📡', 'Telecommunications', 'Network analytics data, customer service NLP, and multilingual support datasets for global telecom operators and AI vendors.', ['Network event datasets', 'Customer intent data', 'Multilingual support NLP', 'Churn prediction data']),
-        ('🏭', 'Manufacturing', 'Quality control imaging data, production line defect detection, and industrial IoT datasets that power smart factory AI.', ['Defect detection images', 'Production line video', 'IoT sensor datasets', 'Safety compliance data']),
-        ('🎓', 'Education &amp; EdTech', 'Learning behaviour data, multilingual educational content datasets, and speech/text data for intelligent tutoring systems.', ['Learner interaction data', 'Educational content labeling', 'Speech recognition datasets', 'Multilingual curriculum data']),
-        ('🏛️', 'Government &amp; Public Sector', 'Document digitisation, multilingual data programs, and public records extraction — compliant with government data standards.', ['Document digitisation', 'Public records extraction', 'Multilingual translation data', 'Policy classification datasets']),
-        ('🛒', 'Retail &amp; E-Commerce', 'Product image annotation, consumer behaviour datasets, and demand forecasting data for AI-driven retail intelligence.', ['Product image annotation', 'Consumer behaviour data', 'Review sentiment datasets', 'Demand forecasting data']),
-        ('💬', 'Conversational AI &amp; NLP', 'Full-stack NLP training data — conversation datasets, intent libraries, entity extraction, and multilingual dialogue data.', ['Dialogue datasets', 'Intent classification', 'Entity extraction data', 'Sentiment analysis labels']),
-        ('🚗', 'Autonomous Vehicles', 'LiDAR annotation, dashcam video labeling, traffic scene datasets, and pedestrian interaction data for ADAS and AV teams.', ['LiDAR point cloud annotation', 'Dashcam video labeling', 'Traffic scene classification', 'Pedestrian detection data']),
-        ('🔒', 'Smart Surveillance', 'Facial recognition training data, anomaly detection datasets, and access control video annotation — ethically sourced.', ['Facial detection datasets', 'Anomaly detection video', 'Access control annotation', 'Crowd behaviour data']),
-        ('💼', 'Business Services', 'B2B demand generation, lead data, and digital marketing for professional services firms, agencies, and SaaS companies.', ['B2B lead generation', 'Account-based targeting', 'Content syndication', 'Channel intelligence']),
+        ('🤖', 'Robotics &amp; Autonomous Systems',
+         'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=1',
+         'Egocentric video, motion tracking, and multi-sensor datasets that power next-generation robotics. We help teams build the perception data pipelines needed for safe, reliable automation.',
+         ['Egocentric video data', 'Motion capture datasets', 'Object detection annotation', 'Multi-sensor fusion data']),
+        ('🏥', 'Healthcare AI',
+         'https://images.pexels.com/photos/4021775/pexels-photo-4021775.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=1',
+         'Medical imaging annotation, clinical NLP datasets, and patient interaction data — delivered with the accuracy and sensitivity healthcare demands.',
+         ['Medical image annotation', 'Clinical NLP datasets', 'Patient record digitisation', 'Diagnostic AI training data']),
+        ('🏦', 'Financial &amp; Banking',
+         'https://images.pexels.com/photos/259200/pexels-photo-259200.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=1',
+         'Fraud detection training data, KYC document processing, and compliance datasets — structured for financial institution requirements.',
+         ['Fraud detection datasets', 'KYC document extraction', 'Transaction classification', 'Regulatory compliance data']),
+        ('📡', 'Telecommunications',
+         'https://images.pexels.com/photos/1591056/pexels-photo-1591056.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=1',
+         'Network analytics data, customer service NLP, and multilingual support datasets for global telecom operators and AI vendors.',
+         ['Network event datasets', 'Customer intent data', 'Multilingual support NLP', 'Churn prediction data']),
+        ('🏭', 'Manufacturing',
+         'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=1',
+         'Quality control imaging data, production line defect detection, and industrial IoT datasets that power smart factory AI.',
+         ['Defect detection images', 'Production line video', 'IoT sensor datasets', 'Safety compliance data']),
+        ('🎓', 'Education &amp; EdTech',
+         'https://images.pexels.com/photos/5905709/pexels-photo-5905709.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=1',
+         'Learning behaviour data, multilingual educational content datasets, and speech/text data for intelligent tutoring systems.',
+         ['Learner interaction data', 'Educational content labeling', 'Speech recognition datasets', 'Multilingual curriculum data']),
+        ('🏛️', 'Government &amp; Public Sector',
+         'https://images.pexels.com/photos/5668882/pexels-photo-5668882.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=1',
+         'Document digitisation, multilingual data programs, and public records extraction — compliant with government data standards.',
+         ['Document digitisation', 'Public records extraction', 'Multilingual translation data', 'Policy classification datasets']),
+        ('🛒', 'Retail &amp; E-Commerce',
+         'https://images.pexels.com/photos/5632398/pexels-photo-5632398.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=1',
+         'Product image annotation, consumer behaviour datasets, and demand forecasting data for AI-driven retail intelligence.',
+         ['Product image annotation', 'Consumer behaviour data', 'Review sentiment datasets', 'Demand forecasting data']),
+        ('💬', 'Conversational AI &amp; NLP',
+         'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=1',
+         'Full-stack NLP training data — conversation datasets, intent libraries, entity extraction, and multilingual dialogue data.',
+         ['Dialogue datasets', 'Intent classification', 'Entity extraction data', 'Sentiment analysis labels']),
+        ('🚗', 'Autonomous Vehicles',
+         'https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=1',
+         'LiDAR annotation, dashcam video labeling, traffic scene datasets, and pedestrian interaction data for ADAS and AV teams.',
+         ['LiDAR point cloud annotation', 'Dashcam video labeling', 'Traffic scene classification', 'Pedestrian detection data']),
+        ('🔒', 'Smart Surveillance',
+         'https://images.pexels.com/photos/430208/pexels-photo-430208.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=1',
+         'Facial recognition training data, anomaly detection datasets, and access control video annotation — ethically sourced.',
+         ['Facial detection datasets', 'Anomaly detection video', 'Access control annotation', 'Crowd behaviour data']),
+        ('💼', 'Business Services',
+         'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=600&dpr=1',
+         'B2B demand generation, lead data, and digital marketing for professional services firms, agencies, and SaaS companies.',
+         ['B2B lead generation', 'Account-based targeting', 'Content syndication', 'Channel intelligence']),
       ] %}
-      {% for icon, title, desc, features in industries %}
-      <div class="card fade-up" style="display:flex;flex-direction:column;gap:20px;">
-        <div style="display:flex;align-items:center;gap:16px;">
-          <div class="card-icon" style="margin:0;flex-shrink:0;">{{ icon }}</div>
-          <h3 style="font-size:1.15rem;">{{ title }}</h3>
+      {% for icon, title, img, desc, features in industries %}
+      <div class="card fade-up" style="display:flex;flex-direction:column;gap:0;padding:0;overflow:hidden;">
+        <!-- Industry image -->
+        <div style="height:180px;overflow:hidden;position:relative;">
+          <img src="{{ img }}" alt="{{ title }}"
+               style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;"
+               onmouseover="this.style.transform='scale(1.06)'"
+               onmouseout="this.style.transform='scale(1)'" loading="lazy" />
+          <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,30,51,0.85) 0%,transparent 60%);display:flex;align-items:flex-end;padding:16px;">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <span style="font-size:1.5rem;">{{ icon }}</span>
+              <h3 style="font-size:1rem;color:var(--white);margin:0;">{{ title }}</h3>
+            </div>
+          </div>
         </div>
-        <p>{{ desc }}</p>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;">
-          {% for f in features %}
-          <span class="badge" style="font-size:0.72rem;">{{ f }}</span>
-          {% endfor %}
+        <!-- Industry content -->
+        <div style="padding:24px;display:flex;flex-direction:column;gap:16px;">
+          <p>{{ desc }}</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            {% for f in features %}
+            <span class="badge" style="font-size:0.72rem;">{{ f }}</span>
+            {% endfor %}
+          </div>
         </div>
       </div>
       {% endfor %}
@@ -56,6 +114,20 @@
       <h2>Reach the Right People<br>in Every Industry</h2>
       <p>Our 214M+ first-party contact database gives you full buying-committee coverage across enterprise and mid-market accounts.</p>
     </div>
+
+    <!-- Audience visual -->
+    <div class="fade-up" style="margin-bottom:48px;border-radius:var(--radius);overflow:hidden;height:240px;position:relative;border:1px solid var(--border);">
+      <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1"
+           alt="Global Business Audience"
+           style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,11,24,0.85) 0%,transparent 65%);display:flex;align-items:center;padding:48px;">
+        <div>
+          <p style="color:var(--gold);font-weight:700;font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;">Global Reach</p>
+          <h3 style="font-size:1.8rem;color:var(--white);max-width:420px;line-height:1.2;">214M+ professionals across 150 countries</h3>
+        </div>
+      </div>
+    </div>
+
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
       <div class="card fade-up">
         <h4 style="margin-bottom:20px;color:var(--cyan);">By Job Level</h4>
@@ -76,9 +148,9 @@
       </div>
       <div class="card fade-up">
         <h4 style="margin-bottom:20px;color:var(--cyan);">Top Sectors</h4>
-        {% for i, sector in enumerate(['Financial & Banking', 'Telecommunications', 'Government', 'Education', 'Manufacturing', 'Healthcare', 'Business Services']) %}
+        {% for sector in ['Financial & Banking', 'Telecommunications', 'Government', 'Education', 'Manufacturing', 'Healthcare', 'Business Services'] %}
         <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);">
-          <span style="font-family:'Syne',sans-serif;font-weight:800;color:var(--muted);font-size:0.75rem;width:20px;">{{ i+1 }}</span>
+          <span style="font-family:'Syne',sans-serif;font-weight:800;color:var(--muted);font-size:0.75rem;width:20px;">{{ loop.index }}</span>
           <span style="font-size:0.88rem;color:var(--off-white);">{{ sector }}</span>
         </div>
         {% endfor %}
