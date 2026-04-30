@@ -76,9 +76,9 @@
       </div>
       <div class="card fade-up">
         <h4 style="margin-bottom:20px;color:var(--cyan);">Top Sectors</h4>
-        {% for i, sector in enumerate(['Financial & Banking', 'Telecommunications', 'Government', 'Education', 'Manufacturing', 'Healthcare', 'Business Services']) %}
+        {% for sector in ['Financial & Banking', 'Telecommunications', 'Government', 'Education', 'Manufacturing', 'Healthcare', 'Business Services'] %}
         <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);">
-          <span style="font-family:'Syne',sans-serif;font-weight:800;color:var(--muted);font-size:0.75rem;width:20px;">{{ i+1 }}</span>
+          <span style="font-family:'Syne',sans-serif;font-weight:800;color:var(--muted);font-size:0.75rem;width:20px;">{{ loop.index }}</span>
           <span style="font-size:0.88rem;color:var(--off-white);">{{ sector }}</span>
         </div>
         {% endfor %}
