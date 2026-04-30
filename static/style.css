@@ -1307,6 +1307,87 @@ p { color: var(--gray-500); line-height: 1.6; }
 .ind-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 
 /* ─────────────────────────────────────────
+   HERO ORBIT ANIMATION (index.html)
+───────────────────────────────────────── */
+.hero-orbit-wrap {
+  position: absolute;
+  right: -80px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 560px;
+  height: 560px;
+  pointer-events: none;
+  z-index: 1;
+}
+.hero-orbit {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hero-orbit-1 {
+  width: 520px; height: 520px;
+  border: 2px dashed rgba(24,226,153,0.55);
+  animation: orbit-spin 16s linear infinite;
+}
+.hero-orbit-2 {
+  width: 380px; height: 380px;
+  border: 1.5px dashed rgba(24,226,153,0.35);
+  animation: orbit-spin 24s linear infinite reverse;
+}
+.hero-orbit-3 {
+  width: 250px; height: 250px;
+  border: 1px solid rgba(24,226,153,0.18);
+  animation: orbit-spin 36s linear infinite;
+}
+.hero-orbit-dot {
+  position: absolute;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--brand);
+  top: -7px; left: calc(50% - 7px);
+  box-shadow:
+    0 0 10px var(--brand),
+    0 0 22px rgba(24,226,153,0.55),
+    0 0 44px rgba(24,226,153,0.25);
+  border: 2px solid rgba(255,255,255,0.7);
+}
+.hero-orbit-dot.dot-2 {
+  width: 10px; height: 10px;
+  top: -5px; left: calc(50% - 5px);
+  background: var(--brand-deep);
+  box-shadow: 0 0 8px var(--brand-deep), 0 0 18px rgba(15,167,110,0.5);
+}
+.hero-orbit-core {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(24,226,153,0.22) 0%, rgba(24,226,153,0.06) 50%, transparent 100%);
+  border: 2px solid rgba(24,226,153,0.45);
+  box-shadow: 0 0 32px rgba(24,226,153,0.2), 0 0 64px rgba(24,226,153,0.08), inset 0 0 24px rgba(24,226,153,0.12);
+  animation: orbit-pulse 3s ease-in-out infinite;
+}
+.hero-orbit-core-inner {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(24,226,153,0.5) 0%, rgba(24,226,153,0.15) 70%, transparent 100%);
+  border: 1.5px solid rgba(24,226,153,0.6);
+  box-shadow: 0 0 16px rgba(24,226,153,0.4);
+  animation: orbit-pulse 3s ease-in-out infinite reverse;
+}
+@keyframes orbit-spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+@keyframes orbit-pulse {
+  0%, 100% { box-shadow: 0 0 32px rgba(24,226,153,0.2), 0 0 64px rgba(24,226,153,0.08); }
+  50%       { box-shadow: 0 0 48px rgba(24,226,153,0.4), 0 0 96px rgba(24,226,153,0.16); }
+}
+@media (max-width: 1024px) { .hero-orbit-wrap { display: none; } }
+
+/* ─────────────────────────────────────────
    RESPONSIVE
 ───────────────────────────────────────── */
 @media (max-width: 1024px) {
@@ -1355,4 +1436,101 @@ p { color: var(--gray-500); line-height: 1.6; }
   .hero-stats { border-radius: var(--radius-sm); }
   .stat-item { padding: 14px 16px; }
   .stat-num { font-size: 1.7rem; }
+}
+
+/* ─────────────────────────────────────────
+   HERO GLOBE — Dark, Vivid, Revolving
+───────────────────────────────────────── */
+.hero-globe-wrap {
+  position: absolute;
+  top: 50%; right: -5%;
+  transform: translateY(-52%);
+  width: 580px; height: 580px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.88;
+}
+.hero-globe-svg {
+  width: 100%; height: 100%;
+  overflow: visible;
+}
+
+/* Meridians rotate — the core globe spin */
+.globe-meridians {
+  transform-origin: 300px 300px;
+  animation: globeSpin 22s linear infinite;
+}
+
+/* Orbit ring 1 rotates on its own axis */
+.globe-orbit1 {
+  transform-origin: 300px 300px;
+  animation: orbitSpin1 14s linear infinite;
+}
+/* Orbit ring 2 counter-rotates */
+.globe-orbit2 {
+  transform-origin: 300px 300px;
+  animation: orbitSpin2 20s linear infinite reverse;
+}
+
+/* Dot 1 — travels the outer orbit ellipse path */
+.globe-dot1 {
+  offset-path: ellipse(290px 78px at 300px 300px);
+  animation: dotOrbit1 14s linear infinite;
+  transform-origin: 300px 300px;
+}
+/* Dot 2 — travels the inner orbit ellipse path */
+.globe-dot2 {
+  offset-path: ellipse(318px 52px at 300px 300px);
+  animation: dotOrbit2 20s linear infinite reverse;
+  transform-origin: 300px 300px;
+}
+
+@keyframes globeSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes orbitSpin1 {
+  from { transform: rotate(-18deg); }
+  to   { transform: rotate(342deg); }
+}
+@keyframes orbitSpin2 {
+  from { transform: rotate(12deg); }
+  to   { transform: rotate(-348deg); }
+}
+@keyframes dotOrbit1 {
+  from { transform: rotate(0deg) translateX(290px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(290px) rotate(-360deg); }
+}
+@keyframes dotOrbit2 {
+  from { transform: rotate(0deg) translateX(318px) rotate(0deg); }
+  to   { transform: rotate(-360deg) translateX(318px) rotate(360deg); }
+}
+
+/* Keep globe visible on mobile but smaller */
+@media (max-width: 1024px) {
+  .hero-globe-wrap {
+    width: 420px; height: 420px;
+    right: -15%;
+    opacity: 0.60;
+  }
+}
+@media (max-width: 768px) {
+  .hero-globe-wrap {
+    width: 300px; height: 300px;
+    top: auto; bottom: -10%;
+    right: -10%;
+    transform: none;
+    opacity: 0.35;
+  }
+}
+
+/* ─────────────────────────────────────────
+   HERO PARTICLE GLOBE CANVAS
+───────────────────────────────────────── */
+.hero-globe-canvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+  pointer-events: none;
 }
