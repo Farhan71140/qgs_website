@@ -60,7 +60,7 @@ document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe
   const dot = document.createElement('div');
   dot.style.cssText = `
     position:fixed;width:320px;height:320px;border-radius:50%;
-    background:radial-gradient(circle,rgba(201,168,76,0.08) 0%,transparent 65%);
+    background:radial-gradient(circle,rgba(24,226,153,0.07) 0%,transparent 65%);
     pointer-events:none;z-index:9998;transform:translate(-50%,-50%);
     transition:left 0.6s ease,top 0.6s ease;opacity:0;
   `;
