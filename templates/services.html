@@ -4,13 +4,147 @@
 
 {% block content %}
 
-<section class="page-hero">
-  <div class="page-hero-bg"></div>
-  <div class="container" style="position:relative;z-index:1;">
-    <div class="label">Our Services</div>
-    <h1>Human-Powered<br><span style="color:var(--blue);">Data & Growth</span> Services</h1>
-    <p>We deliver results — not tools, not dashboards. Every service is executed by trained humans, quality-checked, and optimised for your outcomes.</p>
-  </div>
+<!-- ══ SERVICES HERO ══ -->
+<section style="position:relative;overflow:hidden;background:#ffffff;padding-top:80px;">
+
+  <!-- ── Full bleed background: text left, image right ── -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;min-height:500px;">
+
+    <!-- LEFT PANEL: text on clean white -->
+    <div style="
+      display:flex;flex-direction:column;justify-content:center;
+      padding:56px 56px 56px calc((100vw - 1200px)/2 + 48px);
+      background:#ffffff;
+      position:relative;z-index:2;
+    ">
+      <!-- Soft left glow -->
+      <div style="position:absolute;top:0;right:-120px;width:400px;height:100%;background:radial-gradient(ellipse 80% 80% at 100% 50%,rgba(24,226,153,0.08) 0%,transparent 70%);pointer-events:none;z-index:0;"></div>
+
+      <div style="position:relative;z-index:1;">
+        <div class="label" style="margin-bottom:20px;">Our Services</div>
+
+        <h1 style="font-size:clamp(2.4rem,3.8vw,3.6rem);line-height:1.08;font-weight:800;margin-bottom:22px;color:#0d0d0d;letter-spacing:-0.02em;">
+          Human-Powered<br>
+          <span style="color:var(--brand);">Data &amp; Growth</span><br>
+          Services
+        </h1>
+
+        <p style="font-size:1rem;line-height:1.8;color:#666;max-width:420px;margin-bottom:38px;">
+          We deliver results — not tools, not dashboards. Every service is executed by trained humans, quality-checked, and optimised for your outcomes.
+        </p>
+
+        <!-- Service quick-jump pills -->
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:44px;">
+          {% for anchor, label in [
+            ('#ai-data',       '🎥 AI Data'),
+            ('#lead-gen',      '🎯 Lead Gen'),
+            ('#transcription', '🎙️ Transcription'),
+            ('#extraction',    '📄 Extraction'),
+            ('#digital',       '📈 Marketing'),
+            ('#voice',         '🔊 Voice'),
+          ] %}
+          <a href="{{ anchor }}"
+             style="display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:9999px;border:1.5px solid rgba(24,226,153,0.30);background:rgba(24,226,153,0.05);color:#0fa76e;font-size:0.76rem;font-weight:600;text-decoration:none;transition:all 0.18s ease;"
+             onmouseover="this.style.background='rgba(24,226,153,0.12)';this.style.borderColor='#18E299';this.style.transform='translateY(-1px)';"
+             onmouseout="this.style.background='rgba(24,226,153,0.05)';this.style.borderColor='rgba(24,226,153,0.30)';this.style.transform='translateY(0)';">
+            {{ label }}
+          </a>
+          {% endfor %}
+        </div>
+
+        <!-- Stats row -->
+        <div style="display:flex;gap:28px;padding-top:28px;border-top:1px solid rgba(0,0,0,0.07);">
+          {% for num, lbl in [('6','Core Verticals'),('5,000+','Trained Workforce'),('150+','Countries')] %}
+          <div>
+            <div style="font-family:'Syne',sans-serif;font-size:1.7rem;font-weight:800;color:#0d0d0d;line-height:1;">{{ num }}</div>
+            <div style="font-size:0.72rem;color:#999;margin-top:5px;font-weight:500;">{{ lbl }}</div>
+          </div>
+          {% if not loop.last %}
+          <div style="width:1px;background:rgba(0,0,0,0.08);"></div>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT PANEL: image with breathing room -->
+    <div style="position:relative;overflow:hidden;padding:24px 24px 24px 0;">
+
+      <!-- THE IMAGE — futuristic AI/data visualization -->
+      <div style="position:relative;height:100%;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.10);">
+      <img
+        src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1"
+        alt="AI & Data Services — Qanat Global Solutions"
+        style="
+          width:100%;height:100%;
+          object-fit:cover;
+          object-position:center center;
+          display:block;
+          transform:scale(1.02);
+          transition:transform 8s ease;
+          min-height:452px;
+        "
+        loading="eager"
+        onload="this.style.transform='scale(1)';"
+        onerror="this.src='https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1';"
+      />
+
+      <!-- Gradient fade: left edge blends into white panel -->
+      <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(255,255,255,0.40) 0%,transparent 28%);pointer-events:none;"></div>
+
+      <!-- Gradient fade: bottom -->
+      <div style="position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to top,rgba(255,255,255,0.12) 0%,transparent 100%);pointer-events:none;"></div>
+
+      <!-- Floating card: GDPR compliance -->
+      <div style="
+        position:absolute;bottom:28px;left:28px;
+        background:rgba(255,255,255,0.96);
+        backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+        border:1px solid rgba(24,226,153,0.25);
+        border-radius:16px;padding:14px 20px;
+        box-shadow:0 16px 48px rgba(0,0,0,0.12);
+        display:flex;align-items:center;gap:12px;
+        animation:svcBadgeIn 0.8s 0.6s ease both;
+      ">
+        <div style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,rgba(24,226,153,0.15),rgba(24,226,153,0.05));border:1px solid rgba(24,226,153,0.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">🔒</div>
+        <div>
+          <div style="font-size:0.78rem;font-weight:700;color:#0d0d0d;letter-spacing:0.01em;">GDPR · CCPA · CASL</div>
+          <div style="font-size:0.63rem;color:#aaa;margin-top:3px;">Fully Compliant Data Practices</div>
+        </div>
+      </div>
+
+      <!-- Floating card: Human-verified -->
+      <div style="
+        position:absolute;top:24px;right:24px;
+        background:rgba(255,255,255,0.96);
+        backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+        border:1px solid rgba(0,0,0,0.07);
+        border-radius:16px;padding:14px 20px;
+        box-shadow:0 16px 48px rgba(0,0,0,0.12);
+        display:flex;align-items:center;gap:12px;
+        animation:svcBadgeIn 0.8s 0.9s ease both;
+      ">
+        <div style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,rgba(24,226,153,0.15),rgba(24,226,153,0.05));border:1px solid rgba(24,226,153,0.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">✅</div>
+        <div>
+          <div style="font-size:0.78rem;font-weight:700;color:#0d0d0d;">Human-Verified</div>
+          <div style="font-size:0.63rem;color:#aaa;margin-top:3px;">Every Deliverable, QA Checked</div>
+        </div>
+      </div>
+
+      </div><!-- /inner image wrapper -->
+    </div><!-- /right panel -->
+  </div><!-- /grid -->
+
+  <style>
+    @keyframes svcBadgeIn {
+      from { opacity:0; transform:translateY(12px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    @media(max-width:900px){
+      .svc-hero-grid { grid-template-columns:1fr !important; }
+    }
+  </style>
+
 </section>
 
 <!-- ── AI DATA SERVICES ── -->
@@ -22,18 +156,8 @@
       <p>High-quality, human-generated datasets for AI, ML, and robotics systems. We collect, annotate, and deliver data at scale.</p>
     </div>
 
-    <!-- Section hero image -->
-    <div class="fade-up" style="margin-bottom:48px;border-radius:var(--radius);overflow:hidden;height:320px;position:relative;border:1px solid var(--border);">
-      <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1"
-           alt="AI Robotics Data Collection"
-           style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
-      <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,11,24,0.75) 0%,transparent 60%);display:flex;align-items:center;padding:48px;">
-        <div>
-          <p style="color:var(--gold);font-weight:700;font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:12px;">AI & Robotics</p>
-          <h3 style="font-size:1.8rem;color:var(--white);max-width:400px;line-height:1.2;">Human-generated datasets for the world's smartest machines</h3>
-        </div>
-      </div>
-    </div>
+    <!-- Section divider -->
+    <div style="height:3px;background:linear-gradient(90deg,var(--brand) 0%,rgba(24,226,153,0.15) 100%);border-radius:9999px;margin-bottom:48px;" class="fade-up"></div>
 
     <div class="services-grid">
       <div class="card fade-up">
@@ -68,16 +192,94 @@
       </div>
     </div>
 
-    <!-- Inline video for AI Data -->
-    <div class="fade-up" style="margin-top:48px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);">
-      <video
-        controls
-        preload="none"
-        poster="https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1"
-        style="width:100%;display:block;max-height:420px;object-fit:cover;">
-        <source src="https://videos.pexels.com/video-files/3129957/3129957-hd_1920_1080_25fps.mp4" type="video/mp4" />
-      </video>
+    <!-- ── EGOCENTRIC VIDEO GALLERY ── -->
+    <div class="fade-up" style="margin-top:56px;">
+
+      <!-- Section label -->
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:32px;">
+        <div style="width:4px;height:48px;border-radius:4px;background:linear-gradient(180deg,var(--blue) 0%,var(--cyan,#18E299) 100%);flex-shrink:0;"></div>
+        <div>
+          <p style="font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);margin-bottom:4px;">Live Samples</p>
+          <h3 style="font-size:1.35rem;margin:0;color:var(--white,#fff);">Egocentric Data Collection — Human Activity Videos</h3>
+        </div>
+        <div style="margin-left:auto;background:rgba(24,226,153,0.10);border:1px solid rgba(24,226,153,0.25);border-radius:50px;padding:6px 16px;font-size:0.72rem;font-weight:700;color:#18E299;letter-spacing:0.08em;white-space:nowrap;">
+          4 Samples
+        </div>
+      </div>
+
+      <!-- Description -->
+      <p style="max-width:640px;margin-bottom:36px;font-size:0.95rem;line-height:1.75;color:var(--muted-light,#b0b8c8);">
+        First-person (POV) footage capturing real human activities in everyday environments — kitchen, workspace, outdoors. Used to train robotics and AI systems on how humans interact with the physical world.
+      </p>
+
+      <!-- ── BIG FEATURED VIDEO (ego-1) ── -->
+      <div style="border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);margin-bottom:16px;position:relative;background:#000;">
+        <video
+          id="egoMain"
+          controls
+          preload="metadata"
+          style="width:100%;display:block;max-height:460px;object-fit:cover;">
+          <source src="/static/ego-1.mp4" type="video/mp4" />
+        </video>
+        <div style="position:absolute;top:16px;left:16px;background:rgba(0,0,0,0.60);backdrop-filter:blur(8px);border:1px solid rgba(24,226,153,0.30);border-radius:8px;padding:5px 12px;font-size:0.7rem;font-weight:700;color:#18E299;letter-spacing:0.1em;text-transform:uppercase;">
+          🎥 Ego · Sample 1
+        </div>
+      </div>
+
+      <!-- ── THUMBNAIL ROW (ego-2 to ego-5) ── -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+
+        {% for i in [2,3,4] %}
+        <div
+          onclick="
+            var v = document.getElementById('egoMain');
+            v.src = '/static/ego-{{ i }}.mp4';
+            v.load(); v.play();
+            document.querySelectorAll('.ego-thumb').forEach(function(t){ t.style.borderColor='var(--border)'; });
+            this.style.borderColor='#18E299';
+            v.scrollIntoView({behavior:'smooth',block:'nearest'});
+          "
+          class="ego-thumb"
+          style="
+            border-radius:12px;overflow:hidden;border:2px solid var(--border);
+            cursor:pointer;position:relative;background:#000;
+            transition:border-color 0.2s ease, transform 0.2s ease;
+            aspect-ratio:16/9;
+          "
+          onmouseover="this.querySelector('video').play();this.style.transform='scale(1.03)';"
+          onmouseout="this.querySelector('video').pause();this.querySelector('video').currentTime=0;this.style.transform='scale(1)';"
+          title="Play Sample {{ i }}"
+        >
+          <video
+            preload="metadata"
+            muted
+            loop
+            playsinline
+            style="width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;">
+            <source src="/static/ego-{{ i }}.mp4#t=0.5" type="video/mp4" />
+          </video>
+          <!-- Play overlay -->
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.28);transition:background 0.2s;">
+            <div style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.92);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.3);">
+              <span style="font-size:0.9rem;margin-left:3px;">▶</span>
+            </div>
+          </div>
+          <!-- Sample label -->
+          <div style="position:absolute;bottom:8px;left:8px;background:rgba(0,0,0,0.65);border-radius:6px;padding:3px 8px;font-size:0.65rem;font-weight:700;color:#fff;letter-spacing:0.06em;">
+            Sample {{ i }}
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+
+      <!-- Caption -->
+      <p style="font-size:0.76rem;color:var(--muted,#8892a4);margin-top:16px;text-align:center;">
+        Click any thumbnail to load it in the main player · Hover to preview · All 4 videos are first-party collected by QGS teams
+      </p>
+
     </div>
+    <!-- ── END EGOCENTRIC VIDEO GALLERY ── -->
 
   </div>
 </section>
