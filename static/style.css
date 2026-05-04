@@ -1535,3 +1535,256 @@ p { color: var(--gray-500); line-height: 1.6; }
   z-index: 1;
   pointer-events: none;
 }
+/* ═══════════════════════════════════════════════════════════
+   QGS ENHANCED — Animated Mint Background + Stronger Colors
+   Added: floating orbs, particle canvas, shimmer lines,
+          stronger typography, vivid section accents
+═══════════════════════════════════════════════════════════ */
+
+/* ── STRONGER TYPOGRAPHY OVERRIDES ── */
+:root {
+  --text-primary:   #0a0f1a;
+  --text-secondary: #1e2a38;
+  --text-body:      #3a4a5c;
+  --text-muted:     #5a6b7e;
+}
+
+body { color: var(--text-body); }
+
+h1, h2, h3, h4, h5 { color: var(--text-primary); }
+h1 { color: #05101f; }
+h2 { color: #0a1628; }
+h3 { color: #101e30; }
+
+p { color: var(--text-body); }
+.hero-sub, .hero p { color: #3a4a5c !important; }
+.section-header p { color: #3a4a5c !important; }
+.card p { color: #3a4a5c; }
+.why-item p { color: #3a4a5c; }
+.metric-label { color: #4a5d70 !important; }
+.stat-label { color: #4a5d70 !important; }
+.step-label { color: #3a4a5c !important; }
+.industry-card p { color: #3a4a5c; }
+.hsg-label { color: #5a6b7e !important; }
+.footer-brand p, .footer-brand .footer-tagline { color: rgba(255,255,255,0.7) !important; }
+.nav-links a { color: #1e2a38 !important; }
+.ticker-item { color: #3a4a5c !important; }
+.about-text p { color: #3a4a5c !important; }
+.value-item p { color: #2a3a4c !important; }
+.page-hero p { color: #3a4a5c !important; }
+.ind-img-body p { color: #3a4a5c; }
+
+/* ── ANIMATED BACKGROUND CANVAS ── */
+#qgs-bg-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.55;
+}
+
+/* ── FLOATING MINT ORBS ── */
+.qgs-orb-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+.qgs-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: orbDrift linear infinite;
+  will-change: transform;
+}
+.qgs-orb-1 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(24,226,153,0.10) 0%, rgba(24,226,153,0.03) 55%, transparent 80%);
+  top: -15%; left: -10%;
+  animation-duration: 28s;
+  animation-delay: 0s;
+}
+.qgs-orb-2 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(15,167,110,0.08) 0%, rgba(24,226,153,0.02) 55%, transparent 80%);
+  top: 40%; right: -8%;
+  animation-duration: 35s;
+  animation-delay: -10s;
+}
+.qgs-orb-3 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(0,210,200,0.07) 0%, rgba(24,226,153,0.02) 55%, transparent 80%);
+  bottom: 10%; left: 25%;
+  animation-duration: 42s;
+  animation-delay: -20s;
+}
+.qgs-orb-4 {
+  width: 350px; height: 350px;
+  background: radial-gradient(circle, rgba(24,226,153,0.06) 0%, transparent 70%);
+  top: 20%; left: 55%;
+  animation-duration: 22s;
+  animation-delay: -7s;
+}
+@keyframes orbDrift {
+  0%   { transform: translate(0px, 0px) scale(1); }
+  25%  { transform: translate(30px, -40px) scale(1.06); }
+  50%  { transform: translate(-20px, 30px) scale(0.95); }
+  75%  { transform: translate(40px, 20px) scale(1.04); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+/* ── HERO SHIMMER LINES ── */
+.qgs-shimmer-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.qgs-shimmer-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(24,226,153,0.0) 20%,
+    rgba(24,226,153,0.45) 50%,
+    rgba(24,226,153,0.0) 80%,
+    transparent 100%
+  );
+  animation: shimmerSlide linear infinite;
+  opacity: 0;
+}
+.qgs-shimmer-line:nth-child(1) { width: 60%; top: 22%; left: -60%; animation-duration: 5s; animation-delay: 0s; }
+.qgs-shimmer-line:nth-child(2) { width: 45%; top: 55%; left: -45%; animation-duration: 7s; animation-delay: -2s; }
+.qgs-shimmer-line:nth-child(3) { width: 50%; top: 75%; left: -50%; animation-duration: 6s; animation-delay: -4s; }
+.qgs-shimmer-line:nth-child(4) { width: 35%; top: 38%; left: -35%; animation-duration: 8s; animation-delay: -1s; }
+@keyframes shimmerSlide {
+  0%   { transform: translateX(0); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 0.8; }
+  100% { transform: translateX(260vw); opacity: 0; }
+}
+
+/* ── SECTION GLOW ACCENT BARS ── */
+.section::before,
+.section-sm::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 280px; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(24,226,153,0.25), transparent);
+  pointer-events: none;
+}
+.section { position: relative; }
+.section-sm { position: relative; }
+
+/* ── ENHANCED CARD GLOW ON HOVER ── */
+.card:hover {
+  box-shadow: 0 8px 32px rgba(24,226,153,0.12), 0 2px 8px rgba(0,0,0,0.06) !important;
+  border-color: rgba(24,226,153,0.2) !important;
+}
+.metric-card:hover {
+  box-shadow: 0 6px 24px rgba(24,226,153,0.10), 0 2px 8px rgba(0,0,0,0.04) !important;
+  border-color: rgba(24,226,153,0.15) !important;
+}
+.why-item:hover {
+  box-shadow: 0 6px 24px rgba(24,226,153,0.10) !important;
+  border-color: rgba(24,226,153,0.2) !important;
+}
+
+/* ── ENHANCED HERO ATMOSPHERE ── */
+.hero-split::before {
+  background:
+    radial-gradient(ellipse 80% 100% at 80% 50%, rgba(24,226,153,0.16) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 65% at 10% 85%, rgba(24,226,153,0.07) 0%, transparent 60%) !important;
+}
+
+/* ── ENHANCED PAGE HERO ── */
+.page-hero {
+  background: linear-gradient(180deg, rgba(24,226,153,0.07) 0%, transparent 80%), var(--white) !important;
+}
+.page-hero-bg {
+  background:
+    radial-gradient(ellipse 70% 80% at 80% 40%, rgba(24,226,153,0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 10% 60%, rgba(24,226,153,0.06) 0%, transparent 65%),
+    linear-gradient(180deg, rgba(24,226,153,0.05) 0%, transparent 100%) !important;
+}
+
+/* ── ANIMATED GRID PULSE (hero) ── */
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.7; }
+  50%       { opacity: 1.0; }
+}
+.hero-grid { animation: gridPulse 6s ease-in-out infinite; }
+
+/* ── PROCESS STEP GLOW ── */
+.step-num.final {
+  box-shadow: 0 0 0 4px rgba(24,226,153,0.15), 0 4px 16px rgba(0,0,0,0.15) !important;
+}
+.step-num:hover {
+  border-color: rgba(24,226,153,0.5) !important;
+  background: var(--brand-light) !important;
+  color: var(--brand-deep) !important;
+}
+
+/* ── ENHANCED TICKER ── */
+.ticker-item { color: #3a4a5c !important; }
+
+/* ── BADGE TEXT DARKER ── */
+.badge { color: #0a6e47 !important; }
+.label-pill { color: #0a6e47 !important; }
+.label { color: #0a6e47 !important; }
+
+/* ── STAT NUMBERS STRONGER ── */
+.stat-num { color: #05101f !important; }
+.metric-num { color: #05101f !important; }
+.hsg-num { color: #0a6e47 !important; }
+
+/* ── NAV STRONGER ── */
+.nav-links a { color: #1a2535 !important; }
+.nav-links a:hover { color: #0a6e47 !important; }
+
+/* ── FOOTER STRONGER ── */
+.footer-col a, .footer-col p { color: rgba(255,255,255,0.72) !important; }
+.footer-col h4 { color: rgba(255,255,255,0.45) !important; }
+
+/* ── HERO PARTICLE TRAILS ── */
+@keyframes particleFloat {
+  0%   { opacity: 0; transform: translateY(0) scale(0.8); }
+  20%  { opacity: 0.8; }
+  80%  { opacity: 0.5; }
+  100% { opacity: 0; transform: translateY(-120px) scale(1.3); }
+}
+.qgs-particle {
+  position: absolute;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--brand);
+  box-shadow: 0 0 6px rgba(24,226,153,0.7);
+  animation: particleFloat linear infinite;
+  pointer-events: none;
+}
+
+/* ── SECTION SEPARATOR GLOWS ── */
+.why-section {
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 100%, rgba(24,226,153,0.04) 0%, transparent 70%),
+    var(--gray-50) !important;
+}
+
+/* ── HERO STATS GRID HOVER ── */
+.hsg-item:hover {
+  box-shadow: 0 8px 28px rgba(24,226,153,0.16) !important;
+  border-color: rgba(24,226,153,0.35) !important;
+}
+
+/* ── SCROLLBAR MINT ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f0f4f0; }
+::-webkit-scrollbar-thumb { background: rgba(24,226,153,0.4); border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(24,226,153,0.65); }
+
+/* ── SELECTION COLOR ── */
+::selection { background: rgba(24,226,153,0.22); color: #0a1628; }
